@@ -1,19 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 :root {
-    --main-color: #9356DC;
-    --secondary-color: #ff79da;
-    --tertiary-color: #99e2d0;
+  --main-color: #9356DC;
+  --secondary-color: #ff79da;
+  --tertiary-color: #99e2d0;
 }
 
 header h1 {
-    color:var(--main-color);
+  color: var(--main-color);
 }
 
 header h2 {
-    color:var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 header h3 {
-    color:var(--tertiary-color);
+  color: var(--tertiary-color);
 }
+
+.header .header__title {
+  font-size: 18px;
+}
+.header .header__title--purple {
+  color: #9356DC;
+}
+.header .header__title--pink {
+  color: #ff79da;
+}
+.header .header__title--green {
+  color: #99e2d0;
+}/*# sourceMappingURL=styles.css.map */
