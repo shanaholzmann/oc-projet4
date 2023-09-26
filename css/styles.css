@@ -6,6 +6,23 @@
   --tertiary-color: #99e2d0;
 }
 
+@keyframes fav-anim {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  15% {
+    opacity: 0.25;
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 * {
   font-family: "Roboto";
 }
@@ -86,42 +103,96 @@ body {
   margin-right: 17px;
   position: relative;
 }
-.restaurants img {
-  height: 124px;
-  object-fit: cover;
+.restaurants .cards__picture {
   display: flex;
-  align-self: stretch;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-bottom: 5px;
 }
-.restaurants .card-content {
+.restaurants .cards__picture img {
+  align-self: stretch;
+  width: 100%;
+  height: 124px;
+  object-fit: cover;
+}
+.restaurants .cards__picture--new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  width: 80px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #99e2d0;
+  color: #008766;
+}
+.restaurants .cards .card-content {
   width: 100%;
   padding-left: 15px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
-.restaurants .card-title {
+.restaurants .cards .card-title {
   font-size: 18px;
   padding-top: 4px;
   margin: 0;
 }
-.restaurants .card-subtitle {
+.restaurants .cards .card-subtitle {
   font-size: 17px;
   padding-top: 5px;
   padding-bottom: 8px;
   margin: 0;
 }
-.restaurants .card-favorite {
+.restaurants .cards .card-favorite {
+  position: absolute;
+  top: 73%;
+  right: 7%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 25px;
   margin: 0;
-  padding-top: 8px;
-  padding-bottom: 15px;
+  margin-top: 8px;
+  margin-bottom: 15px;
 }
-.restaurants .card-link {
+.restaurants .cards .favorite-button {
+  width: 28px;
+  z-index: 1;
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-text-stroke: 1px white;
+}
+.restaurants .cards .favorite-button:hover::after {
+  z-index: 2;
+  animation: fav-anim 1000ms forwards cubic-bezier(0.65, 1.01, 0.98, 1.06);
+}
+.restaurants .cards .favorite-button::after {
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 25px;
+  content: "\f004";
+  color: transparent;
+  background: linear-gradient(0deg, #9356DC, #ff79da);
+  background-clip: text;
+  transform-origin: bottom;
+  -webkit-text-stroke: 1px;
+}
+.restaurants .cards .card-link {
+  z-index: 0;
   position: absolute;
   top: 0;
   bottom: 0;
