@@ -14,9 +14,9 @@
   15% {
     opacity: 0.25;
   }
-  80% {
-    opacity: 1;
-    transform: scale(1);
+  75% {
+    opacity: 0.75;
+    transform: scale(0.75);
   }
   100% {
     opacity: 1;
@@ -31,6 +31,16 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+header .back-button {
+  position: absolute;
+  top: 14px;
+  left: 17px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+}
+header .back-button a {
+  color: #000000;
 }
 
 body {
@@ -67,6 +77,9 @@ body {
   font-weight: 300;
 }
 .explore .explore__button {
+  border: none;
+  justify-content: center;
+  width: 218px;
   display: flex;
   align-items: center;
   height: 50px;
@@ -76,8 +89,8 @@ body {
   background-image: linear-gradient(0deg, #9356DC, #ff79da);
   border-radius: 25px;
   font-size: 17px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 57px;
+  box-shadow: 0px 5px 8px rgba(53, 53, 53, 0.3);
 }
 
 .howto {
@@ -171,7 +184,7 @@ body {
 }
 .restaurants .cards .favorite-button:hover::after {
   z-index: 2;
-  animation: fav-anim 1000ms forwards cubic-bezier(0.65, 1.01, 0.98, 1.06);
+  animation: fav-anim 800ms forwards cubic-bezier(0.65, 1.01, 0.98, 1.06);
 }
 .restaurants .cards .favorite-button::after {
   z-index: 0;
@@ -241,24 +254,67 @@ body {
 .restaurant-picture {
   height: 275px;
   width: 375px;
+  position: relative;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
+  position: relative;
+  top: -20px;
+  z-index: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .menu .establishment {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   color: #101010;
   font-family: Shrikhand;
   font-size: 28px;
   font-weight: 400;
   margin-left: 13px;
+}
+.menu .establishment .favorite-button {
+  position: relative;
+  right: 40px;
+  top: 23px;
+  padding: 0;
+  width: 28px;
+  z-index: 1;
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-text-stroke: 1px white;
+  margin: 0;
+  height: 28px;
+}
+.menu .establishment .favorite-button:hover::after {
+  z-index: 2;
+  animation: fav-anim 800ms forwards cubic-bezier(0.65, 1.01, 0.98, 1.06);
+}
+.menu .establishment .favorite-button::after {
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 25px;
+  content: "\f004";
+  color: transparent;
+  background: linear-gradient(0deg, #9356DC, #ff79da);
+  background-clip: text;
+  transform-origin: bottom;
+  -webkit-text-stroke: 1px;
 }
 .menu .categories {
   margin-top: 40px;
@@ -278,6 +334,7 @@ body {
   margin-right: 13px;
   margin-top: 12px;
   margin-left: 13px;
+  box-shadow: 0px 5px 8px rgba(53, 53, 53, 0.3);
 }
 .menu .card-content {
   width: 100%;
@@ -321,11 +378,12 @@ body {
   background-image: linear-gradient(0deg, #9356DC, #ff79da);
   border-radius: 25px;
   font-size: 17px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   margin-top: 40px;
   margin-bottom: 40px;
   width: 186px;
   height: 50px;
+  border: none;
+  box-shadow: 0px 5px 8px rgba(53, 53, 53, 0.3);
 }
 
 /*# sourceMappingURL=styles.css.map */
