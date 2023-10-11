@@ -109,23 +109,40 @@ body {
   color: white;
   font-size: 16px;
   font-weight: 500;
-  background-image: linear-gradient(0deg, #9356DC, #ff79da);
+  background: linear-gradient(0deg, #9356DC, #ff79da);
   border-radius: 25px;
   font-size: 17px;
   margin-bottom: 57px;
   box-shadow: 0px 5px 8px rgba(53, 53, 53, 0.3);
+  cursor: pointer;
+}
+.explore .explore__button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 8px 10px rgba(53, 53, 53, 0.8);
+  transition: all 400ms;
 }
 
 .howto {
-  display: flex;
-  flex-direction: column;
   margin-top: 25px;
   margin-bottom: 40px;
 }
 .howto__title {
+  padding-top: 30px;
   font-size: 24px;
   font-weight: 700;
   padding-left: 20px;
+}
+.howto__list {
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 1440px) {
+  .howto__list {
+    width: auto;
+    padding: 0px 180px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .howto .step {
   display: flex;
@@ -163,18 +180,40 @@ body {
   font-weight: 500;
   width: 211px;
 }
+.howto .step:hover i {
+  color: #9356DC;
+  transition: color 500ms ease;
+}
 
 .restaurants {
-  display: flex;
-  flex-direction: column;
   gap: 18px;
   background-color: #f6f6f6;
-  padding-bottom: 35px;
 }
 .restaurants__title {
+  padding-top: 30px;
   font-size: 24px;
   font-weight: 700;
   padding-left: 20px;
+}
+@media all and (min-width: 1440px) {
+  .restaurants__title {
+    padding: 30px 180px;
+  }
+}
+.restaurants__list {
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 1440px) {
+  .restaurants__list {
+    width: 75%;
+    padding-left: 180px;
+    padding-right: 180px;
+    padding-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px 100px;
+  }
 }
 .restaurants .cards {
   width: auto;
@@ -186,11 +225,18 @@ body {
   margin-left: 17px;
   margin-right: 17px;
   position: relative;
+  margin-bottom: 35px;
+}
+@media all and (min-width: 1440px) {
+  .restaurants .cards {
+    width: 490px;
+    max-width: 490px;
+    height: 251px;
+    margin: 0;
+  }
 }
 .restaurants .cards__picture {
   display: flex;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   margin-bottom: 5px;
 }
 .restaurants .cards__picture img {
@@ -198,6 +244,15 @@ body {
   width: 100%;
   height: 124px;
   object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+@media all and (min-width: 1440px) {
+  .restaurants .cards__picture img {
+    height: 174px;
+    max-height: 174px;
+    max-width: 500px;
+  }
 }
 .restaurants .cards__picture--new {
   display: flex;
@@ -260,7 +315,7 @@ body {
   z-index: 0;
   opacity: 0;
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -291,11 +346,22 @@ body {
   background-color: #353535;
   color: #ffffff;
 }
+@media all and (min-width: 1440px) {
+  .footer {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
 .footer .section {
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 15px;
+}
+@media all and (min-width: 1440px) {
+  .footer .section {
+    flex-direction: row;
+  }
 }
 .footer .footer-title {
   font-family: Shrikhand;
@@ -303,6 +369,16 @@ body {
   font-weight: 400;
   margin: 0;
   font-style: normal;
+}
+@media all and (min-width: 1440px) {
+  .footer .footer-title {
+    order: 2;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    top: 5px;
+    padding-left: 16px;
+  }
 }
 .footer .footer-link {
   text-decoration: none;
@@ -313,12 +389,24 @@ body {
 .footer .footer-link i {
   width: 30px;
 }
+@media all and (min-width: 1440px) {
+  .footer .footer-link {
+    order: 1;
+  }
+}
 .footer ul {
   display: flex;
   flex-direction: column;
   padding: 0;
   list-style-type: none;
   gap: 15px;
+}
+@media all and (min-width: 1440px) {
+  .footer ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .restaurant-picture {
@@ -373,7 +461,7 @@ body {
   z-index: 0;
   opacity: 0;
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -417,7 +505,7 @@ body {
   color: white;
   font-size: 16px;
   font-weight: 500;
-  background-image: linear-gradient(0deg, #9356DC, #ff79da);
+  background: linear-gradient(0deg, #9356DC, #ff79da);
   border-radius: 25px;
   font-size: 17px;
   margin-top: 40px;
@@ -426,6 +514,11 @@ body {
   height: 50px;
   border: none;
   box-shadow: 0px 5px 8px rgba(53, 53, 53, 0.3);
+}
+.menu .order:hover {
+  opacity: 0.8;
+  box-shadow: 0px 8px 10px rgba(53, 53, 53, 0.8);
+  transition: all 400ms;
 }
 
 .fade-in {
